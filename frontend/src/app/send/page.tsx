@@ -2,10 +2,10 @@
 
 import axios from "axios";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { toast } from "react-toastify";
 
-const SendMoney = () => {
+const SendMoneyComponent = () => {
   const searchParams = useSearchParams();
 
   const to = searchParams.get("to");
@@ -13,6 +13,7 @@ const SendMoney = () => {
 
   const [amount, setAmount] = useState(0);
   const router = useRouter();
+
   return (
     <div className="flex justify-center h-screen bg-gray-100">
       <div className="h-full flex flex-col justify-center">
@@ -78,5 +79,11 @@ const SendMoney = () => {
     </div>
   );
 };
+
+const SendMoney = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <SendMoneyComponent />
+  </Suspense>
+);
 
 export default SendMoney;
