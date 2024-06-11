@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 const page = () => {
   const [value, setValue] = useState(0);
   const router = useRouter();
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");

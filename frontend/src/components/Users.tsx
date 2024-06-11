@@ -35,14 +35,14 @@ export const Users = () => {
       </div>
       <div>
         {users.map((user) => (
-          <User key={user._id} user={user} />
+          <User key={user} user={user} />
         ))}
       </div>
     </>
   );
 };
 
-function User({ user }) {
+function User({ user }: { user: any }) {
   const router = useRouter();
 
   return (
