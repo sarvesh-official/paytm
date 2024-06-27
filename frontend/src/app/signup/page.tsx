@@ -44,7 +44,7 @@ const page = () => {
             onChange={(e) => {
               setUsername(e.target.value);
             }}
-            placeholder="harkirat@gmail.com"
+            placeholder="sarvesh@gmail.com"
             label={"Email"}
           />
           <InputBox
